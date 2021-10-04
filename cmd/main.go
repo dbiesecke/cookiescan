@@ -8,7 +8,7 @@ import (
 
 	"github.com/gosuri/uiprogress"
 	"github.com/miekg/pcap"
-	"github.com/tomsteele/cookiescan"
+	"github.com/dbiesecke/cookiescan"
 )
 
 type empty struct{}
