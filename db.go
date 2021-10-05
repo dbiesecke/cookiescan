@@ -88,12 +88,13 @@ func (s *Store) Tabbed(confidence int) {
 	results := s.build(confidence)
 	w := tabwriter.NewWriter(os.Stdout, 0, 8, 4, ' ', 0)
 	for _, r := range results {
-		fmt.Fprintf(w, "%s:%d\n", r.Host , p.Port )
 //		fmt.Fprintln(w, "Port\tState\tService\tConfidence\tReason")
-//		for _, p := range r.Services {
-//			fmt.Fprintf(w, "%d\t%s\t%s\t%d\t%s\n", p.Port, p.State, p.Service, p.Confidence, p.Reason)
-//		}
-//		w.Flush()
+		for _, p := range r.Services {
+		   fmt.Fprintf(w, "%s:%d\n", r.Host , p.Port )
+
+		//			fmt.Fprintf(w, "%d\t%s\t%s\t%d\t%s\n", p.Port, p.State, p.Service, p.Confidence, p.Reason)
+		}
+		w.Flush()
 	}
 }
 
